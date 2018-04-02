@@ -1,5 +1,7 @@
 <?php 
 
+
+defined('BASEPATH') or exit('no script access allowed');
 	/**
 	* 
 	*/
