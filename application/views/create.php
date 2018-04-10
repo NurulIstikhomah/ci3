@@ -43,8 +43,8 @@
 
 <div class="container">
 <?php 
-	echo validation_errors();
-	echo form_open('Blog/create')
+  echo validation_errors();
+  echo form_open('Blog/create')
 ?>
 <h3 align="center">Tambah Data </h3><br>
 Judul : <input type="text" class="form-control" name="judul"><br>

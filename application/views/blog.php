@@ -51,7 +51,7 @@
   </head>
 
   <body>
-
+<?php $this->load->helper('text'); ?>
 <nav class="navbar navbar-defa">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -89,6 +89,7 @@
         <div class="row text-center">
           <div class="col-lg-10 mx-auto">
             <h2>My Blog</h2>
+            <a href="<?php echo site_url('Blog/create')?>">Artikel Baru</a>
             <hr class="small">
             <div class="row">
               <div class="col-md-3 col-sm-6">
