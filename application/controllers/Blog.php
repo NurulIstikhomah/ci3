@@ -8,13 +8,18 @@ Class Blog extends CI_Controller{
 			parent::__construct();
 			//Load model dan helper
 			// $this->load->model('model_blog');
+			$this->load->model('Artikel');
 			$this->load->helper('url_helper');
 		}
 	public function index(){
+		$this->load->view('header');
 		$this->load->view('home1');
+		$this->load->view('footer');
 	}
 	public function about(){
+		$this->load->view('header');
 		$this->load->view('about');
+		$this->load->view('footer');
 	}
 	public function blog(){
 		$this->load->view('blog');

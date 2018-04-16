@@ -3,7 +3,7 @@
 
   <head>
 
-    <style>
+<!--     <style>
 .blog {
     background-color: red;
     color: white;
@@ -30,7 +30,7 @@
 .dropdown:hover .dropdown-child {
     display: block;
 }
-</style>
+</style> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -75,8 +75,8 @@
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>Nurul Istikhomah</h1>
-        <h3> Welcome To My Personal WEB &amp; Enjoy Guys</h3>
+        <h1>My Blog</h1>
+        <h3> Welcome See My Blog</h3>
         <br>
         <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger" >Find Out More</a>
       </div>
@@ -89,7 +89,7 @@
         <div class="row text-center">
           <div class="col-lg-10 mx-auto">
             <h2>My Blog</h2>
-            <a href="<?php echo site_url('Blog/create')?>">Artikel Baru</a>
+            <a href="<?php echo site_url('Blogger/create')?>">Artikel Baru</a>
             <hr class="small">
             <div class="row">
               <div class="col-md-3 col-sm-6">
@@ -200,21 +200,21 @@
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
             <h4>
-              <strong>Nurul Istikhomah</strong>
-            </h4>
-            <p>Balongbendo
+              <p align="center"><strong>Nurul Istikhomah</strong>
+            </h4></p>
+            <p align="center">Balongbendo
               <br>Sidoarjo , Indonesia</p>
             <ul class="list-unstyled">
-              <li>
-                <i class="fa fa-phone fa-fw"></i>
-                085655820838</li>
-              <li>
+            
+                <i class="fa fa-phone fa-fw"></i> <p align="center"> 
+                085655820838</p>
+             
                 <i class="fa fa-envelope-o fa-fw"></i>
-                <a href="mailto:name@example.com">nurulistik5@gmail.com</a>
-              </li>
+                <a href="mailto:name@example.com"><p align="center"> nurulistik5@gmail.com</a>
+             </p>
             </ul>
             <br>
-            <ul class="list-inline">
+           <!--  <ul class="list-inline">
               <li class="list-inline-item">
                 <a href="#">
                   <i class="fa fa-facebook fa-fw fa-3x"></i>
@@ -230,9 +230,9 @@
                   <i class="fa fa-dribbble fa-fw fa-3x"></i>
                 </a>
               </li>
-            </ul>
+            </ul> -->
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Your Website 2018</p>
+            <p align="center" class="text-muted">Copyright &copy; Your Website 2018</p>
           </div>
         </div>
       </div>

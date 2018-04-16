@@ -1,37 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <!--  <head>
-
-    <style>
-.blog {
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding:20px;
-    margin-top:20px;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-child {
-    display: none;
-    background-color: black;
-    min-width: 200px;
-}
-.dropdown-child a {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown:hover .dropdown-child {
-    display: block;
-}
-</style> -->
-    <meta charset="utf-8">
+ <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,18 +35,79 @@
       <!-- </button> -->
       <a class="navbar-brand" href="#">Nurul Istikhomah</a>
     </div>
-    <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
-      <ul class="nav navbar-nav">
-        <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('About/index')."'>About</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/index/')."'>Blog</a></li>"?>
-      </ul>
-    <!-- </div> -->
-  </div>
-</nav>
 
+    <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/g3.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Pengalaman</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Pendidikan</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="blogger">My Blog</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- Header -->
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0"><?php echo $name['firstname']?>
+            <span class="text-primary"><?php echo $name['lastname']?></span>
+          </h1>
+          <div class="subheading mb-5"><?php echo $address; ?>
+            <a href="mailto:<?php echo $email ?>"><?php echo $email?></a>
+          </div>
+          <p class="mb-5"><?php echo $about?></p>
+         <!--  <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul> -->
+
+     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
         <h1>Nurul Istikhomah</h1>
@@ -105,7 +136,7 @@
                 <a href="mailto:name@example.com">nurulistik5@gmail.com</a>
               </p>
             </ul>
-            <br>
+           <!--  <br>
             <ul class="list-inline">
               <class="list-inline-item">
                 <a href="#">
@@ -122,7 +153,7 @@
                   <i class="fa fa-dribbble fa-fw fa-3x"></i>
                 </a>
               
-            </ul>
+            </ul> -->
             <hr class="small">
             <p align="center" class="text-muted">Copyright &copy; Your Website 2018</p>
           </div>

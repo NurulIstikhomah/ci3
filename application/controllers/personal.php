@@ -11,6 +11,3 @@ class Personal extends CI_Controller {
 	}
 
 }
-
-/* End of file personal.php */
-/* Location: ./application/controllers/personal.php */

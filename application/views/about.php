@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-
+<!-- 
     <style>
 .blog {
     background-color: red;
@@ -30,7 +30,7 @@
 .dropdown:hover .dropdown-child {
     display: block;
 }
-</style>
+</style> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -64,9 +64,13 @@
     </div>
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
-        <?php echo "<li><a href='".site_url('Blog/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/about/')."'>About</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
+        
+         <ul class="nav navbar-nav">
+        <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
+        <?php echo "<li><a href='".site_url('About/index/')."'>About</a></li>"?>
+        <?php echo "<li><a href='".site_url('blog/index/')."'>Blog</a></li>"?>
+      </ul>
+
       </ul>
     <!-- </div> -->
   </div>
@@ -75,8 +79,8 @@
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>Nurul Istikhomah</h1>
-        <h3> Welcome To My Personal WEB &amp; Enjoy Guys</h3>
+        <h1>About</h1>
+        <h3> Sepenggal Tentang Diriku</h3>
         <br>
         <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger" >Find Out More</a>
       </div>
@@ -128,16 +132,16 @@
     </aside>
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <!-- <section id="contact" class="map">
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
       <br/>
       <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
       </small>
-    </section>
+    </section> -->
 
     <!-- Footer -->
-    <footer>
+   <!--  <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
@@ -172,7 +176,7 @@
                   <i class="fa fa-dribbble fa-fw fa-3x"></i>
                 </a>
               </li>
-            </ul>
+            </ul> -->
             <hr class="small">
             <p class="text-muted">Copyright &copy; Your Website 2018</p>
           </div>
@@ -185,10 +189,16 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="http://localhost:8080/ci3/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8080/ci3/assets/vendor/jquery/jquery.js"></script>
+    <!-- <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.js"></script>
+<!--     <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.min.js"></script> -->
 
     <!-- Plugin JavaScript -->
     <script src="http://localhost:8080/ci3/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="http://localhost:8080/ci3/assets/vendor/jquery-easing/jquery.easing.js"></script>
+    <!-- <script src="http://localhost:8080/ci3/assets/vendor/jquery-easing/jquery.easing.compatibility.js"></script> -->
 
     <!-- Custom scripts for this template -->
     <script src="http://localhost:8080/ci3/assets/js/stylish-portfolio.js"></script>
