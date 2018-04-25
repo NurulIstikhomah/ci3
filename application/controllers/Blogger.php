@@ -16,12 +16,13 @@ class Blogger extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('home1');
 		//Memanggil fungsi menampilkan semua tabel artikel
-		$url = $this->uri->segment(3);
+		/*$url = $this->uri->segment(3);*/
 		// segmentasi paging  
-		$data['artikel']=$this->Artikel->get_article();
-		
-		$this->load->view('blogger/tampil_blog', $data);
+		/*$data['artikel']=$this->Artikel->get_article();
+		*/
+		/*$this->load->view('blogger/tampil_blog', $data);*/
 		// $this->load->view('blogger/footer');
 	}
 	public function view(){
@@ -38,9 +39,9 @@ class Blogger extends CI_Controller {
 		$data['judul'] = $data['show_article']['judul'];
 		$data['artikel'] = $data['show_article']['artikel'];*/
 		//Meload View
-		$this->load->view('blogger/header');
+		/*$this->load->view('blogger/header');*/
 		$this->load->view('blogger/view', $data);
-		$this->load->view('blogger/footer');
+		/*$this->load->view('blogger/footer');*/
 	}
 
 	public function create(){
@@ -53,9 +54,9 @@ class Blogger extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			//View tambah artikel
-			$this->load->view('header');
+			$this->load->view('blogger/header');
 			$this->load->view('create');
-			$this->load->view('footer');
+			// $this->load->view('blogger/footer');
 		} else {
 			$config['upload_path'] = 'assets/img/';
 			$config['allowed_types'] = 'jpg|png|jpeg';
@@ -101,9 +102,9 @@ class Blogger extends CI_Controller {
 		//Jika validasi belum berjalam
 		if ($this->form_validation->run() == FALSE) {
 			//Meload View tambah artikel
-			$this->load->view('blogger/header');
+			/*$this->load->view('blogger/header');*/
 			$this->load->view('blogger/edit',$data);
-			$this->load->view('blogger/footer');
+			/*$this->load->view('blogger/footer');*/
 		} else {
 			$config['upload_path'] = 'assets/img/';
 			$config['allowed_types'] = 'jpg|png|jpeg';

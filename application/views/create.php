@@ -35,9 +35,9 @@
     </div>
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
-        <?php echo "<li><a href='".site_url('Blog/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/about/')."'>About</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/about/')."'>About</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/blog/')."'>Blog</a></li>"?>
       </ul>
 
 

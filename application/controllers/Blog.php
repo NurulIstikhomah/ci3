@@ -12,14 +12,14 @@ Class Blog extends CI_Controller{
 			$this->load->helper('url_helper');
 		}
 	public function index(){
-		$this->load->view('header');
+		/*$this->load->view('header');*/
 		$this->load->view('home1');
-		$this->load->view('footer');
+		/*$this->load->view('footer');*/
 	}
 	public function about(){
-		$this->load->view('header');
+	/*	$this->load->view('header');*/
 		$this->load->view('about');
-		$this->load->view('footer');
+		/*$this->load->view('footer');*/
 	}
 	public function blog(){
 		$this->load->view('blog');
@@ -29,13 +29,13 @@ Class Blog extends CI_Controller{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		//validasi inputan yang masuk
-		$this->form_validation->set_rules('title', 'title', 'required');
+		$this->form_validation->set_rules('judul', 'judul', 'required');
 		$this->form_validation->set_rules('artikel', 'artikel', 'required');
 		//Jika validasi belum berjalam
 		if ($this->form_validation->run() == FALSE) {
 			//Meload View tambah artikel
 			// $this->load->view('Blog/header');
-			$this->load->view('Blog/create');
+			$this->load->view('Blogger/create');
 			// $this->load->view('Blog/footer');
 		} else {
 			//query tambah data

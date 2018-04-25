@@ -52,21 +52,24 @@
 
   <body>
 <?php $this->load->helper('text'); ?>
-<nav class="navbar navbar-defa">
+<!-- <nav class="navbar navbar-defa">
   <div class="container-fluid">
     <div class="navbar-header">
-      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar"> -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>        
+        <span class="icon-bar"></span> -->        
       <!-- </button> -->
       <a class="navbar-brand" href="#">Nurul Istikhomah</a>
-    </div>
+
+    
+    <!-- </div> -->
+
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
-        <?php echo "<li><a href='".site_url('Blog/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/about/')."'>About</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/about/')."'>About</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/blog/')."'>Blog</a></li>"?>
       </ul>
     <!-- </div> -->
   </div>
@@ -89,6 +92,11 @@
         <div class="row text-center">
           <div class="col-lg-10 mx-auto">
             <h2>My Blog</h2>
+              <p align="right">
+    <button type="submit" href="Home" class="btn btn-default"><a href="home1"> Home</a></button></h3>
+ 
+    <button type="submit" href="Blogger" class="btn btn-default"><a href="blogger/create"> Create</a></button></h3></p>
+  </div>
             <a href="<?php echo site_url('Blogger/create')?>">Artikel Baru</a>
             <hr class="small">
             <div class="row">

@@ -89,9 +89,11 @@
     <!-- About -->
     <section id="about" class="about">
       <div class="container text-center">
-        <h1>About Me !!!</h1>
-        <p class="lead"> Call Me Nurul ! <br> I'm From Sidoarjo , Indonesia <br> I'm live at Malang </br>
-          <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox">My Email</a>.</p>
+      <p align="center"><img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g3.jpg" width='500' height='320'></p>
+     
+        <h1><p align="center"> About Me !!!</p></h1>
+        <p class="lead"> <p align="center"> Call Me Nurul ! <br> I'm From Sidoarjo , Indonesia <br> I'm live at Malang , Indonesia </p></br></p>
+          <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"><p align="center"> My Email</p></a>
       </div>
       <!-- /.container -->
     </section>
@@ -110,7 +112,7 @@
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary text-white">
       <div class="container text-center">
-        <h3>My Profile.</h3>
+        <h3>My Photo Gallery ;)</h3>
          <section id="teams" class="section teams">
   <div class="container">
     <div class="row">
@@ -118,15 +120,18 @@
         <div class="col-md-6">
                 <div class="portfolio-item">
                   <a href="#">
-                    <img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g2.jpg">
+                    <!-- p align="center"> --><img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g7.jpg" width='300' height='200'><!-- </p> -->
+                    <img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g1.jpg" width='300' height='200'>
+                    <img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g4.jpg" width='300' height='200'>
+                    <img class="img-portfolio img-fluid" src="http://localhost:8080/ci3/assets/img/g6.jpg" width='300' height='200'>
                   </a>
                 </div>
               </div>
-          <div class="person-content">
+         <!--  <div class="person-content">
             <h4>Nurul Istikhomah</h4>
             <h5 class="role">The Programmer</h5>
             <p>Name : Nurul Istikhomah <br> TTL : Sidoarjo, 18 September 1997 <br> Address : Balongbendo, Sidoarjo | Kertoasri , Malang <br> Email : nurulistik5@gmail.com<br>  </p>
-          </div>
+          </div> -->
         
       </div>
     </aside>
@@ -178,7 +183,7 @@
               </li>
             </ul> -->
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Your Website 2018</p>
+            <p align="center" class="text-muted">Copyright &copy; Your Website 2018</p>
           </div>
         </div>
       </div>

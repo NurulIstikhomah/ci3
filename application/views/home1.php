@@ -68,8 +68,8 @@
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
         <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('About/index')."'>About</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/index/')."'>Blog</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blog/about')."'>About</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
       </ul>
     <!-- </div> -->
   </div>
@@ -79,9 +79,10 @@
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>Nurul Istikhomah</h1>
+        <h1>My Home</h1>
         <h3> Welcome To My Personal WEB &amp; Enjoy Guys</h3>
         <br>
+        <h3>Nurul Istikhomah</h3>
         <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger" >Find Out More</a>
       </div>
     </header>

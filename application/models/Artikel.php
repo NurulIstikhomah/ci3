@@ -20,11 +20,11 @@ class Artikel extends CI_Model {
      }
 
      public function set_article($id = 0, $data){
-     	/*$this->load->helper('url');
-     	$object = array(
+     	$this->load->helper('url');
+     	/*$object = array(
      		'title' => $this->input->post('title'),
      		'artikel' => $this->input->post('artikel')
-     		);
+     		);*/
      	//Membedakan untuk query create dan update*/
      	if($id == 0){
      		$this->db->insert('artikel', $data);
