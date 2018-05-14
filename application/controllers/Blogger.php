@@ -230,11 +230,11 @@ $data['dropdown'] = $this->categories->dropdown();
 				
 				$this->pagination->initialize($config);
 					
-				$data["links"] = $this->pagination->create_category();
+				$data["category"] = $this->pagination->create_category();
 			}
 
 			/*$this->load->view('header');*/
-			$this->load->view('categories', $data);
+			$this->load->view('blog', $data);
 			/*$this->load->view('footer');*/
 	}
 }

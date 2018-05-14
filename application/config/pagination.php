@@ -25,3 +25,5 @@ $config['first_tagl_close'] = '</span></li>';
 
 $config['last_tag_open'] 	= '<li class="page-item"><span class="page-link">';
 $config['last_tagl_close'] 	= '</span></li>';
+
+
