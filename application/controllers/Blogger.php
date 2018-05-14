@@ -15,6 +15,32 @@ class Blogger extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
 	}
 
+	public function blog()
+		{
+			$limit_per_page = 3;
+
+			$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
+
+			
+			$total_records = $this->model_blog->get_total();
+
+			if ($total_records > 0) {
+				$data["all_blog"] = $this->model_blog->get_all_blog($limit_per_page, $start_index);
+				
+				$config['base_url'] = base_url() . 'blog/blog';
+				$config['total_rows'] = $total_records;
+				$config['per_page'] = $limit_per_page;
+				$config["uri_segment"] = 3;
+				
+				$this->pagination->initialize($config);
+					
+				$data["categories"] = $this->pagination->create_category();
+			}
+			/*$this->load->view('header');*/
+			$this->load->view('blog', $data);
+			/*$this->load->view('footer');*/
+		}
+
 	public function index()
 	{
 		$this->load->view('home1');
@@ -184,5 +210,31 @@ $data['dropdown'] = $this->categories->dropdown();
 		$id = $this->uri->segment(3);
 		$this->Artikel->delete_article($id);
 		redirect('blogger','refresh');
+	}
+
+	public function kategori(){
+
+		$limit_per_page = 3;
+
+			$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
+
+			$total_records = $this->model_kategori->get_total();
+
+			if ($total_records > 0) {
+				$data["categories"] = $this->model_kategori->get_all_categories($limit_per_page, $start_index);
+				
+				$config['base_url'] = base_url() . 'blogger/kategori';
+				$config['total_rows'] = $total_records;
+				$config['per_page'] = $limit_per_page;
+				$config["uri_segment"] = 3;
+				
+				$this->pagination->initialize($config);
+					
+				$data["links"] = $this->pagination->create_category();
+			}
+
+			/*$this->load->view('header');*/
+			$this->load->view('categories', $data);
+			/*$this->load->view('footer');*/
 	}
 }
