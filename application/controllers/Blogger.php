@@ -9,6 +9,7 @@ class Blogger extends CI_Controller {
 		parent::__construct();
 		//Load model dan helper
 		$this->load->model('Artikel');
+		$this->load->model('categories');
 		$this->load->helper('url_helper','date','file','pagination');
 		
 		date_default_timezone_set('Asia/Jakarta');
@@ -46,6 +47,11 @@ class Blogger extends CI_Controller {
 
 	public function create(){
 		//Mereload helper form dan form valudasi
+		$data['dropdown'] = $this->categories->dropdown();
+		$config['upload_path'] = './image/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$this->load->library('upload', $config);
+
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		//validasi inputan
@@ -54,14 +60,44 @@ class Blogger extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			//View tambah artikel
-			$this->load->view('blogger/header');
-			$this->load->view('create');
+			/*$this->load->view('blogger/header');*/
+			/*$this->load->view('blogger/header');*/
+			$this->load->view('blogger/create',$data);
+			/*$this->load->view('blogger/footer');*/
+			// $this->load->view('create'); 
 			// $this->load->view('blogger/footer');
 		} else {
-			$config['upload_path'] = 'assets/img/';
-			$config['allowed_types'] = 'jpg|png|jpeg';
+			if ( ! $this->upload->do_upload('gambar')){
+                $data['upload_error'] = $this->upload->display_errors();
 
-			$this->load->library('upload', $config);
+                $this->load->view('blogger/header');
+    	            $this->load->view('blogger/create',$data);
+    	            $this->load->view('blogger/footer');
+                } else {
+					$data = array('upload_data' => $this->upload->data());
+                 $data['input'] = array(
+                 	'judul' => $this->input->post('judul'),
+ 					'tanggal' => date("Y-m-d H:i:s"),
+ 					'author' => $this->input->post('author'),
+					'kategori' => $this->input->post('cat_id'),
+					'cat_id' => $this->input->post('cat_id'),
+ 					'konten' => $this->input->post('konten'),
+ 					'image' => $this->upload->data('file_name')
+ 				);
+                 $dataa = array (
+                 	'cat_name' => $this->input->post('cat_name'),
+                 	'cat_description' => $this->input->post('cat_description'),
+                 	'date_created' => date("d-m-Y"),
+                 	);
+                $this->categories->tambah_kategori($dataa);
+                 $this->Artikel->set_kategori(0,$dataa['input']);
+				 //kembali ke home
+				 redirect('blogger');
+			
+			/*$config['upload_path'] = 'assets/img/';
+			$config['allowed_types'] = 'jpg|png|jpeg';*/
+
+			/*$this->load->library('upload', $config);
 
 			if ( ! $this->upload->do_upload('userfile')){
 				$error = array('error' => $this->upload->display_errors());
@@ -82,7 +118,7 @@ class Blogger extends CI_Controller {
 				//query tambah data
 				$this->Artikel->set_article(0,$data['input']);
 				//kembali ke home
-				redirect('blogger');
+				redirect('blogger');*/
 			}
 
 		}
@@ -97,7 +133,13 @@ class Blogger extends CI_Controller {
 
 		$id = $this->uri->segment(3);
 		//Mengambil data dari model 
+		/*$data['show_article'] = $this->Artikel->get_article_by_id($id);*/
+
+$data['dropdown'] = $this->categories->dropdown();
 		$data['show_article'] = $this->Artikel->get_article_by_id($id);
+		$data['id'] = $data['show_article']['id'];
+		$data['judul'] = $data['show_article']['title'];
+		$data['konten'] = $data['show_article']['konten'];
 
 		//Jika validasi belum berjalam
 		if ($this->form_validation->run() == FALSE) {
@@ -106,12 +148,17 @@ class Blogger extends CI_Controller {
 			$this->load->view('blogger/edit',$data);
 			/*$this->load->view('blogger/footer');*/
 		} else {
-			$config['upload_path'] = 'assets/img/';
-			$config['allowed_types'] = 'jpg|png|jpeg';
-			//Memulai Upload
-			$this->load->library('upload', $config);
+			$data['input'] = array(
+                 	'judul' => $this->input->post('judul'),
+ 					'tanggal' => date("Y-m-d H:i:s"),
+ 					'author' => $this->input->post('author'),
+					'kategori' => $this->input->post('cat_id'),
+					'cat_id' => $this->input->post('cat_id'),
+ 					'konten' => $this->input->post('konten'),
+ 					'image' => $this->upload->data('file_name')
+ 				);
 
-			//Cek kondisi upload
+			/*//Cek kondisi upload
 			if ( ! $this->upload->do_upload('userfile')){
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
@@ -125,17 +172,15 @@ class Blogger extends CI_Controller {
 					
 					'gambar' => $this->upload->data('file_name')
 					
-				);
+				);*/
 				
 				$this->Artikel->set_article($id,$data['input']);
 				//kembali ke home
 				redirect('blogger');
 			}
-		}	
-	}
+		}
 
-		
-	public function delete(){
+		public function delete(){
 		$id = $this->uri->segment(3);
 		$this->Artikel->delete_article($id);
 		redirect('blogger','refresh');

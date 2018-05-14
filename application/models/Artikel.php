@@ -19,6 +19,17 @@ class Artikel extends CI_Model {
      	return $query->row_array();
      }
 
+     public function get_join(){
+
+          $this->db->order_by('blog.tanggal', 'DESC');
+
+          $this->db->join('kategori', 'kategori.id_kategori = blog.id_kategori');
+       
+          $query = $this->db->get('blog');
+
+  return $query->result();
+     }
+
      public function set_article($id = 0, $data){
      	$this->load->helper('url');
      	/*$object = array(
@@ -32,6 +43,22 @@ class Artikel extends CI_Model {
      		$this->db->where('id',$id);
      		return $this->db->update('artikel', $data);
      	}
+     }
+
+
+     public function set_kategori($id = 0, $data){
+          $this->load->helper('url');
+          /*$object = array(
+               'title' => $this->input->post('title'),
+               'artikel' => $this->input->post('artikel')
+               );*/
+          //Membedakan untuk query create dan update*/
+          if($id == 0){
+               $this->db->insert('categories', $data);
+          }else{
+               $this->db->where('cat_id',$id);
+               return $this->db->update('categories', $data);
+          }
      }
 
      public function delete_article($id){

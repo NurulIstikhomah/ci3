@@ -8,7 +8,9 @@
 		<td><b>Tanggal</b></td>
 		<td><b>Author</b></td>
 		<td><b>Konten</b></td>
+        <td><b>Kategori</b></td>
 		<td><b>Gambar</b></td>
+        <td colspan="3"><b>Action</b></td>
 	</tr>
 <?php
 foreach ($artikel->result_array() as $row)
@@ -16,7 +18,7 @@ foreach ($artikel->result_array() as $row)
 			echo "<tr>";
         	echo "<td>".$row['id']."</td>";
         	echo "<td>".$row['judul']."</td>";
-        	echo "<td>".$row['tgl']."</td>";
+        	echo "<td>".$row['tanggal']."</td>";
         	echo "<td>".$row['author']."</td>";
         	echo "<td>".$row['konten']."</td>";
         	/*echo "<td>".$row['gambar']."</td>";*/
@@ -27,6 +29,7 @@ foreach ($artikel->result_array() as $row)
         	echo "</tr>";
         	echo "<td><a href='".site_url('home')."'>Home</a></td>";
 		}
+        echo "<td><a href='".site_url('blog')."'>Back</a></td>";
 ?>
 </table>
 </div>
