@@ -72,6 +72,11 @@ class Blogger extends CI_Controller {
 	}
 
 	public function create(){
+
+		if(!$this->session->userdata('logged_in')){
+			redirect('user/login');
+		}
+
 		//Mereload helper form dan form valudasi
 		$data['dropdown'] = $this->categories->dropdown();
 		$config['upload_path'] = './image/';

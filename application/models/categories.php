@@ -22,4 +22,9 @@ class categories extends CI_Model{
 		return $this->db->insert('categories', $data);
 	}
 
+	public function get_total()
+  {
+    return $this->db->count_all("");
+  }
+
 }

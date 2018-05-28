@@ -67,9 +67,22 @@
     </div>
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
+      
         <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
         <?php echo "<li><a href='".site_url('Blog/about')."'>About</a></li>"?>
         <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
+
+      <?php if(!$this->session->userdata('logged_in')) : ?>
+        <?php echo "<li><a href='".site_url('User/login/')."'>Login</a></li>"?>
+        <?php echo "<li><a href='".site_url('User/register/')."'>Register</a></li>"?>
+      <?php endif; ?>
+
+      <?php if($this->session->userdata('logged_in')) : ?>
+          <div class="btn-group" role="group" aria-label="Data baru">              
+              <?php echo anchor('user/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+          </div>
+      <?php endif; ?>
+
       </ul>
     <!-- </div> -->
   </div>
@@ -86,6 +99,31 @@
         <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger" >Find Out More</a>
       </div>
     </header>
+
+
+    
+
+      
+
+                
+        <!-- </nav> -->
+
+        <?php if($this->session->flashdata('user_registered')): ?>
+          <?php echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</div>'; ?>
+        <?php endif; ?>
+        <?php if($this->session->flashdata('login_failed')): ?>
+          <?php echo '<div class="alert alert-danger">'.$this->session->flashdata('login_failed').'</div>'; ?>
+        <?php endif; ?>
+
+        <?php if($this->session->flashdata('user_loggedin')): ?>
+          <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</div>'; ?>
+        <?php endif; ?>
+
+         <?php if($this->session->flashdata('user_loggedout')): ?>
+          <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</div>'; ?>
+        <?php endif; ?>
+        
+
 
     <!-- Footer -->
     <footer>
@@ -145,5 +183,4 @@
     <script src="http://localhost:8080/ci3/assets/js/stylish-portfolio.js"></script>
 
   </body>
-
 </html>

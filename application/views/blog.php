@@ -70,7 +70,13 @@
         <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
         <?php echo "<li><a href='".site_url('Blogger/about/')."'>About</a></li>"?>
         <?php echo "<li><a href='".site_url('Blogger/blog/')."'>Blog</a></li>"?>
-      </ul>
+      
+
+      <?php if(!$this->session->userdata('logged_in')) : ?>
+        <?php echo "<li><a href='".site_url('User/login/')."'>Login</a></li>"?>
+        <?php echo "<li><a href='".site_url('User/register/')."'>Register</a></li>"?>
+      <?php endif; ?>
+    </ul>
     <!-- </div> -->
   </div>
 </nav>
