@@ -67,12 +67,13 @@ class User extends CI_Controller{
 			'user_id' => $user_id,
 			'username' => $username,
 			'logged_in' => true
+			'level' => $this->user_model->get_user_level($user_id)
 		);
 
 		$this->session->set_userdata($user_data);
 
 		// Set message
-		$this->session->set_flashdata('user_loggedin', 'Anda sudah login');
+		$this->session->set_flashdata('user_loggedin', 'Selamat Datang,' .$username);
 
 		redirect('Blogger/index');
 	} else {
@@ -94,6 +95,38 @@ class User extends CI_Controller{
 		$this->session->set_flashdata('user_loggedout', 'Anda sudah log out');
 
 		redirect('user/login');
+	}
+
+	// membuat fungsi create
+
+	public function create()
+	{
+		// cek login
+		if(!$this->session->userdata('logged_in')){
+			redirect('user/login');
+		}
+	
+	$data['page_title'] = 'Tulis Artikel';
+}
+
+// Dashbor
+
+	public function dashbor(){
+
+		if(!this->session->userdata('logged_in')){
+			redirect('user/login');
+		}
+
+		$username = $this->session->userdata('username');
+
+		//Dapatkan detail user
+		$data['user'] = $this->user_model=>get_user_details($username);
+
+		// Load dashbor
+
+		/*$this->load->view('template/header');*/
+		$this->load->view('users/dashbor',$data);
+		/*$this->load->view('templates/footer');*/
 	}
 
 }

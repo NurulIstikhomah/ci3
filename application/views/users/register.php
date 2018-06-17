@@ -101,6 +101,18 @@
 						<input type="password" class="form-control" name="password2" placeholder="Ulangi Password">
 					</div>
 						<br>
+						
+					<div class="form-group">
+						<label for="">Pilih Paket MemberShip</label>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="membership"  id="goldmember" value="2" checked>
+							<label class="form-check-label" for="goldmember">Gold</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="membership"  id="silvermember" value="3" checked>
+							<label class="form-check-label" for="silvermember">Silver</label>
+						</div>
+					</div>
 							<br>
 					<button type="submit" class="btn btn-primary btn-block">Register</button>
 				<?php echo form_close(); ?>
