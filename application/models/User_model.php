@@ -42,20 +42,21 @@ class User_model extends CI_Model {
         //dapatkan data level
 
         $this->db->select('fk_level_id');
-        $this->db->where('user_id'$user_id);
+        $this->db->where('user_id', $user_id);
 
         $result = $this->db->get('users');
 
-        if($result->num_rows()=1){
+        if($result->num_rows()==1){
             return $result->row(0)->fk_level_id;
         } else{
             return false;
         }
     }
 
+    
     public function get_user_details($username)
     {
-        $this->db->where('username',%username);
+        $this->db->where('username',$username);
 
         $result = $this->db->get('users');
 

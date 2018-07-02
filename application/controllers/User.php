@@ -66,7 +66,7 @@ class User extends CI_Controller{
 		$user_data = array(
 			'user_id' => $user_id,
 			'username' => $username,
-			'logged_in' => true
+			'logged_in' => true,
 			'level' => $this->user_model->get_user_level($user_id)
 		);
 
@@ -74,8 +74,15 @@ class User extends CI_Controller{
 
 		// Set message
 		$this->session->set_flashdata('user_loggedin', 'Selamat Datang,' .$username);
-
-		redirect('Blogger/index');
+		if($this->session->userdata('logged_in') && $this->session->userdata('level') == 1){
+			redirect('Blogger');
+		}
+		else if($this->session->userdata('logged_in') && $this->session->userdata('level') == 2){
+			redirect('Blogger/index2');
+		}
+		else{
+			redirect('Blogger/index3');
+		}
 	} else {
 		// Set message
 		$this->session->set_flashdata('login_failed', 'Login invalid');
@@ -94,7 +101,7 @@ class User extends CI_Controller{
 		// Set message
 		$this->session->set_flashdata('user_loggedout', 'Anda sudah log out');
 
-		redirect('user/login');
+		redirect('User/login');
 	}
 
 	// membuat fungsi create
@@ -113,14 +120,14 @@ class User extends CI_Controller{
 
 	public function dashbor(){
 
-		if(!this->session->userdata('logged_in')){
+		if(!$this->session->userdata('logged_in')){
 			redirect('user/login');
 		}
 
 		$username = $this->session->userdata('username');
 
 		//Dapatkan detail user
-		$data['user'] = $this->user_model=>get_user_details($username);
+		$data['user'] = $this->user_model->get_user_details($username);
 
 		// Load dashbor
 

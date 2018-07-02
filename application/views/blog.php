@@ -99,11 +99,11 @@
           <div class="col-lg-10 mx-auto">
             <h2>My Blog</h2>
               <p align="right">
-    <button type="submit" href="Home" class="btn btn-default"><a href="home1"> Home</a></button></h3>
+   <!--  <button type="submit" href="Home" class="btn btn-default"><a href="home1"> Home</a></button></h3>
  
     <button type="submit" href="Blogger" class="btn btn-default"><a href="blogger/create"> Create</a></button></h3></p>
-  </div>
-            <a href="<?php echo site_url('Blogger/create')?>">Artikel Baru</a>
+  </div> -->
+            <a href="<?php echo site_url('blogger/create')?>">Artikel Baru</a>
             <hr class="small">
             <div class="row">
               <div class="col-md-3 col-sm-6">

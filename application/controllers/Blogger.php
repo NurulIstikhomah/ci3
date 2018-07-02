@@ -22,7 +22,7 @@ class Blogger extends CI_Controller {
 			$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
 
 			
-			$total_records = $this->model_blog->get_total();
+			$total_records = $this->$model_blog->get_total();
 
 			if ($total_records > 0) {
 				$data["all_blog"] = $this->model_blog->get_all_blog($limit_per_page, $start_index);
@@ -51,6 +51,14 @@ class Blogger extends CI_Controller {
 		*/
 		/*$this->load->view('blogger/tampil_blog', $data);*/
 		// $this->load->view('blogger/footer');
+	}
+	public function index2()
+	{
+		$this->load->view('home2');
+	}
+	public function index3()
+	{
+		$this->load->view('home3');
 	}
 	public function view(){
 		$id = $this->uri->segment(3);

@@ -68,20 +68,19 @@
     <!-- <div class="collapse navbar-collapse" id="mainNavbar"> -->
       <ul class="nav navbar-nav">
       
-        <?php echo "<li><a href='".site_url('Blogger/index/')."'>Home</a></li>"?>
-        <?php echo "<li><a href='".site_url('Blog/about')."'>About</a></li>"?>
+        <?php echo "<li><a href='".site_url('Blogger/index2/')."'>Home</a></li>"?>
+        <!-- <?php //echo "<li><a href='".site_url('Blog/about')."'>About</a></li>"?> -->
         <?php echo "<li><a href='".site_url('Blog/blog/')."'>Blog</a></li>"?>
 
       <?php if(!$this->session->userdata('logged_in')) : ?>
-        <?php echo "<li><a href='".site_url('User/login/')."'>Login</a></li>"?>
-        <?php echo "<li><a href='".site_url('User/register/')."'>Register</a></li>"?>
+        <!-- <?php //echo "<li><a href='".site_url('User/login/')."'>Login</a></li>"?>
+        <?php //echo "<li><a href='".site_url('User/register/')."'>Register</a></li>"?> -->
       <?php endif; ?>
 
       <?php if($this->session->userdata('logged_in')) : ?>
-          <!-- <div class="btn-group" role="group" aria-label="Data baru">              
-              <?php //echo anchor('user/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
-          </div> -->
-          <?php echo "<li><a href='".site_url('User/logout/')."'>Logout</a></li>"?>
+          <div class="btn-group" role="group" aria-label="Data baru">              
+              <?php echo anchor('user/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+          </div>
       <?php endif; ?>
 
       </ul>
